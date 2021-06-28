@@ -1,11 +1,11 @@
-name: 
-author: 
-url: 
+name: 雅音宫羽的博客
+author: nct
+url: https://NctZyc.github.io
 baseurl: 
-resume_site: 
-description: 
-github_username: 
-github: 
+resume_site: https://NctZyc.github.io
+description: 一个安静的小屋
+github_username: 雅音宫羽
+github: https://github.com/NctZyc
 plugins: [jekyll-paginate]
 permalink: /:year-:month-:day-:title
 paginate: 12
@@ -15,8 +15,8 @@ highlighter: rouge
 markdown: kramdown
 comments :
   gitalk :
-    clientID : 
-    clientSecret : 
-    repo : 
-    owner : 
-    admin : 
+    clientID : 017
+    clientSecret : 017
+    repo : NctZyc.github.io
+    owner : 雅音宫羽
+    admin : 雅音宫羽
