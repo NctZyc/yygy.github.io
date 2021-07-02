@@ -10,8 +10,12 @@ icon: book
 
 * content
 {:toc}
+<<<<<<< HEAD
 ### 先给自己打个气
 
+=======
+每天起床第一句
+>>>>>>> 1b792b1b4790a92d610f7ad6b73551b76acadfbd
 ## sub title
 
 page...
