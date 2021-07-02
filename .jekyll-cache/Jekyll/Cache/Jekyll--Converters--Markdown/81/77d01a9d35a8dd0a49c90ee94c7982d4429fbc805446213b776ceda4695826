@@ -1,10 +1,11 @@
-I"�<ul id="markdown-toc">
-  <li><a href="#先给自己打个气" id="markdown-toc-先给自己打个气">先给自己打个气</a></li>
+I"7<ul id="markdown-toc">
   <li><a href="#sub-title" id="markdown-toc-sub-title">sub title</a></li>
   <li><a href="#about-thumbnail" id="markdown-toc-about-thumbnail">about thumbnail</a></li>
   <li><a href="#about-icon" id="markdown-toc-about-icon">about icon</a></li>
 </ul>
-<h3 id="先给自己打个气">先给自己打个气</h3>
+<blockquote>
+  <p>先给自己打个气</p>
+</blockquote>
 
 <h2 id="sub-title">sub title</h2>
 
@@ -17,4 +18,5 @@
 <h2 id="about-icon">about icon</h2>
 
 <p>such as book, code, web, chat, note, game, link, design, image</p>
+
 :ET
