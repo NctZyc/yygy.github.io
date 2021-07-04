@@ -1,0 +1,37 @@
+I"�<ul id="markdown-toc">
+  <li><a href="#一准备工作" id="markdown-toc-一准备工作"><strong>一、准备工作</strong></a>    <ul>
+      <li><a href="#1github的基本使用" id="markdown-toc-1github的基本使用">1.GitHub<strong>的基本使用</strong></a></li>
+    </ul>
+  </li>
+  <li><a href="#二不知道写什么" id="markdown-toc-二不知道写什么"><strong>二、不知道写什么</strong></a></li>
+  <li><a href="#三结尾" id="markdown-toc-三结尾"><strong>三、结尾</strong></a></li>
+</ul>
+<blockquote>
+  <p>大家好！欢迎来访我的博客小站，这是我的第一篇博客，我成功的利用github和jekyll模板搭建起自己的博客便迫不及待的想要给大家分享搭建过程，希望这篇文章可以给你们带来帮助。</p>
+</blockquote>
+
+<h1 id="一准备工作"><strong>一、准备工作</strong></h1>
+
+<ul>
+  <li>一个GitHub账号</li>
+  <li>Git版本控制工具</li>
+  <li>MarkDown编辑器（这里推荐Markdownpad2和Typora）</li>
+  <li>Jekyll 一个简洁的博客、静态网站生成工具(可在本地开启服务器进行博客预览)</li>
+</ul>
+
+<h3 id="1github的基本使用">1.GitHub<strong>的基本使用</strong></h3>
+
+<p><a href="https://github.com/">注册GitHub并登陆</a></p>
+
+<p><img src="../style/image/2021-06-30-搭建属于自己的博客-01.png" alt="2021-06-30-搭建属于自己的博客-01" /></p>
+
+<h1 id="二不知道写什么"><strong>二、不知道写什么</strong></h1>
+
+<p>such as book, code, web, chat, note, game, link, design, imageat</p>
+
+<p>你好我是随</p>
+
+<p><img src="../style/image/2b4ef96f0b8e9f68b42fe35da618140d.png" alt="2b4ef96f0b8e9f68b42fe35da618140d" /></p>
+
+<h1 id="三结尾"><strong>三、结尾</strong></h1>
+:ET

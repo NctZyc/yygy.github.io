@@ -33,6 +33,16 @@
 
         </div>
     </div>
+	<div class="accessCount">
+	{% if page.id %}
+		<span id="busuanzi_container_page_pv">本文总阅读量<span id="busuanzi_value_page_pv"></span>次</span>
+	{% else %}
+		<span id="busuanzi_container_site_uv">“真巧啊,在这里遇见你”，第<span id="busuanzi_value_site_uv"></span>位小伙伴</span>
+	{% endif %}
+	</div>
+	
+	
+	
 </footer>
 
 <!-- #end -->
