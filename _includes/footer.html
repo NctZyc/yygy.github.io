@@ -8,23 +8,31 @@
             </div>
         </div>
     </div>
+	<div class="accessCount">
+	{% if page.id %}
+		<span id="busuanzi_container_page_pv">本文总阅读量<span id="busuanzi_value_page_pv"></span>次</span>
+	{% else %}
+		<span id="busuanzi_container_site_uv">“真巧啊,在这里遇见你”，第<span id="busuanzi_value_site_uv"></span>位小伙伴</span>
+	{% endif %}
+	</div>
     <div class="footer-meta">
         <div class="footer-container">
             <div class="meta-item meta-copyright">
                 <div class="meta-copyright-info">
                     <a href="{{site.resume_site}}" class="info-logo">
-                        <img src="{{ '/style/image/logo.png' | prepend: site.baseurl }}" alt="wonder">
+                        <img src="{{ '/style/image/global/favicon.png' | prepend: site.baseurl }}" alt="wonder">
                     </a>
                     <div class="info-text">
-                        <p>Copyright &copy; 2016 - {{ site.time | date: '%Y' }} <a href="{{site.resume_site}}"><code>{{ site.author }}</code></a></p>
-                        <p>Powered by <a href="http://jekyllrb.com" target="_blank" rel="nofollow"><code>jekyll</code></a>，theme is <a href="https://github.com/lightfish-zhang/pinghsu-jekyll" target="_blank" rel="nofollow"><code>pinghsu</code></a></p>
+                        <p>Copyright &copy; 2016 - {{ site.time | date: '%Y' }} <a href="{{site.resume_site}}"><code style="font-size: 16px;">{{ site.author }}</code></a></p>
+                        <p><a href="https://beian.miit.gov.cn/" target="_blank" style="color:#767676;">赣ICP备2022001325号-1</a></p>
+						<p><a target="_blank" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=44030502008724" style="display:inline-block;text-decoration:none;height:20px;line-height:20px;color:#767676;"><img src="/style/image/global/备案图标.png" style="float:left;"/>粤公网安备 44030502008724号</a></p>
                     </div>
                 </div>
             </div>
 
             <div class="meta-item meta-posts">
                 <h3 class="meta-title">最近的帖子</h3>
-                {% for post in site.posts limit:7 %}
+                {% for post in site.posts limit:4 %}
                     <li>
                         <a href="{{ post.url }}">{{ post.title }}</a>
                     </li>
@@ -33,25 +41,7 @@
 
         </div>
     </div>
-	<div class="accessCount">
-	{% if page.id %}
-		<span id="busuanzi_container_page_pv">本文总阅读量<span id="busuanzi_value_page_pv"></span>次</span>
-	{% else %}
-		<span id="busuanzi_container_site_uv">“真巧啊,在这里遇见你”，第<span id="busuanzi_value_site_uv"></span>位小伙伴</span>
-	{% endif %}
-	</div>
-	
-	
-	
 </footer>
-
-<!-- #end -->
-<script src="//cdn.bootcss.com/jquery/1.10.1/jquery.min.js"></script>
-<script>
-	!window.jQuery && document.write(unescape('%3Cscript src="{{ site.baseurl }}/style/js/jquery.min.js"%3E%3C/script%3E'))
-</script>
-<script src="{{ site.baseurl }}/style/js/headroom.min.js"></script>
-<script src="{{ site.baseurl }}/style/js/nav.min.js"></script>
 <script type="text/javascript">
     var header = new Headroom(document.getElementById("header"), {
         tolerance: 10,
@@ -63,10 +53,89 @@
         }
     });
     header.init();
+	
+	
+	debugger
+	//1707*1350
+	var bg = $("#bg_div");
+	//bg.css("background","url(/style/themeImg/bg/bg-spring-1.png) no-repeat 100% 100%"); 
 </script>
+<!-- 播放器 -->
+	<div class="music-player">
+		<!-- audio标签  -->
+		<audio class="music-player__audio" ></audio>
+		
+		<!-- 歌曲列表 -->
+		<div class="music-player__list">
+			<ul class="music__list_content">
+			</ul>
+		</div>
+		
+		<!-- 播放器主体 -->
+		<div class="music-player__main">
+			<!-- 模糊背景 -->
+			<div class="music-player__blur"></div>
+			<!-- 唱片 -->
+			<div class="music-player__disc">
+				<!-- 唱片图片 -->
+				<div class="music-player__image">
+					<img width="100%" src="" alt="">
+				</div>
+				<!-- 指针 -->
+				<div class="music-player__pointer"><img width="100%" src="/style/musicPlayer/images/cd_tou.png" alt=""></div>
+			</div>
+			<!-- 隐藏按钮 -->
+			<div class="hidePlayer"></div>
+			<!-- 控件主体 -->
+			<div class="music-player__controls">
+				<!-- 歌曲信息 -->
+				<div class="music__info">
+					<h3 class="music__info--title">...</h3>
+					<p class="music__info--singer">...</p>
+				</div>
+				<!-- 控件... -->
+				<div class="player-control">
+					<div class="player-control__content">
+						<div class="player-control__btns">
+							<div class="player-control__btn player-control__btn--prev"><i class="iconfont icon-prev"></i></div>
+							<div class="player-control__btn player-control__btn--play"><i class="iconfont icon-play"></i></div>
+							<div class="player-control__btn player-control__btn--next"><i class="iconfont icon-next"></i></div>
+							<div class="player-control__btn player-control__btn--mode"><i class="iconfont icon-loop"></i></div>
+							<div class="player-control__btn player-control__btn--list"><div class="icon-musicList" ></div></div>
+						</div>
+						<div class="player-control__volume">
+							<div class="control__volume--icon player-control__btn"><i class="iconfont icon-volume"></i></div>
+							<div class="control__volume--progress progress"></div>
+						</div>
+					</div>
+
+					<!-- 歌曲播放进度 -->
+					<div class="player-control__content">
+						<div class="player__song--progress progress"></div>
+						<div class="player__song--timeProgess nowTime">00:00</div>
+						<div class="player__song--timeProgess totalTime">00:00</div>
+					</div>
+
+				</div>
+			</div>
+		</div>
+	</div>
+<!-- #end -->
+<!-- <script src="{{ site.baseurl }}/style/js/jquery.min.js"></script> head里已经引用本地的了-->
+<!-- 不蒜子计数 -->
+<script async src="/style/js/busuanzi.pure.mini.js"></script>
+
+<link rel="stylesheet" href="/style/css/cp.css">
+<script src="/style/js/clipboard.min.js"></script>
+<script src="/style/js/cp.js"></script>
+<!-- 音乐播放器的js -->
+<script src="/style/musicPlayer/js/utill.js"></script>
+<script src="/style/musicPlayer/js/player.js"></script>
+
+
 
 <script>window.SmoothScrollOptions = { stepSize: 36 }</script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/smoothscroll/1.4.8/SmoothScroll.min.js"></script>
+<script src="/style/js/SmoothScroll.min.js"></script>
 <script>
 	!window.SmoothScroll && document.write(unescape('%3Cscript src="{{ site.baseurl }}/style/js/SmoothScroll.min.js"%3E%3C/script%3E'))
 </script>
@@ -79,6 +148,6 @@
   })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
 
   ga('create', '{{site.googlaAnalyticsID}}', 'auto');
-  ga('send', 'pageview');
+  ga('send', 'pageview'); 
 </script>
 {% endif %}

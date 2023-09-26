@@ -1,0 +1,28 @@
+<!-- 正在加载样式 -->
+<link rel="stylesheet" href="/style/css/loading.css">
+<div id="loadBox">
+<div class="loader">
+  <span style="background: #b8f1ed;"></span>
+  <span style="background: #f1b8e4;"></span>
+  <span style="background: #b7d28d;"></span>
+  <span style="background: #f1ccb8;"></span>
+  <span style="background: #cb8e85;"></span>
+  <span style="background: #f55066;"></span>
+  <span style="background: #f16d7a;"></span>
+  <span style="background: #f3d64e;"></span>
+  <span style="background: #fe9778;"></span>
+  <span style="background: #de772c;"></span>
+  <span style="background: #ca7497;"></span>
+  <span style="background: #e96a25;"></span>
+  <span style="background: #e37c5b;"></span>
+  <span style="background: #cf8888;"></span>
+</div>
+</div>
+<script>
+$("html").css("overflow","hidden");
+setTimeout(function(){
+	$("#loadBox").css("display","none");
+	$("#loadBox").html("");
+	$("html").css("overflow","auto");
+},3000);
+</script>

@@ -1,17 +1,19 @@
 ---
 layout: default
+pagination: 
+  enabled: true
 ---
-
+<div id="bg_div">
 <div class="main-content index-page clearfix">
     <div class="post-lists">
         <div class="post-lists-body">
             {% for post in paginator.posts %}
             <div class="post-list-item">
                 <div class="post-list-item-container">
-                    <div class="item-thumb bg-deepgrey" style="background-image:url({% if post.thumbnail %}{{ post.thumbnail }}{% else %}{{ '/style/image/thumbnail.png' | prepend: site.baseurl }}{% endif %});"></div>
+                    <div class="item-thumb bg-deepgrey" style="background-image:url({% if post.thumbnail %}{{ post.thumbnail }}{% else %}{{ '/style/image/global/thumbnail.png' | prepend: site.baseurl }}{% endif %});"></div>
                     <a href="{{ post.url | prepend: site.baseurl }}">
                         <div class="item-desc">
-                            <p>{{ post.content | strip_html | strip_newlines | truncate: 128 }} </p>
+                            <p>{{ post.excerpt | strip_html | strip_newlines | truncate: 128 }} </p>
                         </div>
                     </a>
                     <div class="item-slant reverse-slant bg-deepgrey"></div>
@@ -22,7 +24,7 @@ layout: default
                         {{ post.date | date: "%b %d, %Y" }}
                         </div>
                         <div class="item-meta clearfix">
-                            <div class="item-meta-ico {% if post.icon %}bg-ico-{{ post.icon }}{% endif %}" style="background: url({{ '/style/image/bg-ico.png' | prepend: site.baseurl }}) no-repeat;background-size: 40px auto;"></div>
+                            <div class="item-meta-ico {% if post.icon %}bg-ico-{{ post.icon }}{% endif %}" style="background: url({{ '/style/image/global/bg-ico.png' | prepend: site.baseurl }}) no-repeat;background-size: 40px auto;"></div>
                             <div class="item-meta-cat">
                                 <a href="javascript:void(0);">{{ post.category }}</a>
                             </div>
@@ -33,8 +35,6 @@ layout: default
             {% endfor %}
         </div>
     </div>
-
-
     {% if paginator.total_pages > 1 %}
     <div class="lists-navigator clearfix">
         <ol class="page-navigator">
@@ -43,7 +43,7 @@ layout: default
             {% endif %}
             {% for page in (1..paginator.total_pages) %}
             <li {% if page==paginator.page %} class="current" {% endif %}>
-                <a href="{% if page == 1 %}{{  '/' | prepend: site.baseurl }}{% else %}{{ site.paginate_path | relative_url | replace: ':num', page }}{% endif %}">{{
+                <a href="{% if page == 1 %}{{  '/' | prepend: site.baseurl }}{% else %}{{ site.paginate_path | relative_url |  replace: ':num', page }}{% endif %}">{{
                     page }}</a>
             </li>
             {% endfor %}
@@ -53,5 +53,5 @@ layout: default
         </ol>
     </div>
     {% endif %}
-
+</div>
 </div>

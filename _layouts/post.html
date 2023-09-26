@@ -14,15 +14,49 @@ layout: default
 </article>
 <div class="main-container">
     <div class="post-container">
-        <div class="navigation" id="navigation">
+		<div class="navigation" id="navigation">
             <h1>目录</h1>
             <ul class="nav sidenav"></ul>
         </div>
-        <article class="post-content">
+		<article class="post-content">
             {{ content }}
         </article>
         <div class="post-content">
          {% include comment.html %}
         </div>
     </div>
+</div>
+<div id="display_wall">
+	<!-- 信息展示-->
+	<div id="info_wall">
+	<div class="detail_info"></div>
+	<div class="detail_info info_center"><img src="/style/PhotoWall/images/header.png"></div>
+	<div class="detail_info"></div>
+	</div>
+	<div id="daily_sentence">
+	<p class="daily_sentence_title">每日一言</p>
+	<p class="daily_sentence_content">这个人很懒，什么都没有写……</P>
+	</div>
+	<!-- 照片墙展示-->
+	<!-- {animation:"default"} {animation:"diamond"}  {animation:"turn3d"}  {animation:"flip3d"} {animation:"rotate"} {animation:"fade"} -->
+	<div class="photoWall">
+			<div class="imgContainer">
+				<img src="/style/PhotoWall/images/{{ page.date | date: '%Y-%m-%d' }}/a.jpg"	data-expander='{animation:"default"}'>
+			</div>
+			<div class="imgContainer">
+				<img src="/style/PhotoWall/images/{{ page.date | date: '%Y-%m-%d' }}/b.jpg"	data-expander='{animation:"diamond"}'>
+			</div>
+			<div class="imgContainer">
+				<img src="/style/PhotoWall/images/{{ page.date | date: '%Y-%m-%d' }}/c.jpg"	data-expander='{animation:"turn3d"}'>
+			</div>
+			<div class="imgContainer secondRow">
+				<img src="/style/PhotoWall/images/{{ page.date | date: '%Y-%m-%d' }}/d.jpg"	data-expander='{animation:"flip3d"}'>
+			</div>
+			<div class="imgContainer">
+				<img src="/style/PhotoWall/images/{{ page.date | date: '%Y-%m-%d' }}/e.jpg"	data-expander='{animation:"rotate"}'>
+			</div>				
+			<!--<div class="imgContainer">
+				<img src="images/a.jpg"	data-expander='{animation:"fade"}'>			
+			</div> -->
+	</div>
 </div>
