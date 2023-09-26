@@ -13,7 +13,7 @@ theme: minima
 plugins: [jekyll-paginate,jekyll-feed,jekyll-sitemap,jekyll-seo-tag]
 permalink: /:year-:month-:day-:title
 paginate: 9
-paginate_path: "/page/:num/
+paginate_path: "/page/:num/"
 exclude: ['Gemfile.lock', 'Gemfile', 'Rakefile','README.md']
 highlighter: rouge
 comments :
