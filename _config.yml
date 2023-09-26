@@ -11,13 +11,9 @@ markdown: kramdown
 theme: minima
  #permalink: /:year/:month/:day/:title
 plugins: [jekyll-paginate,jekyll-feed,jekyll-sitemap,jekyll-seo-tag]
-pagination:
-  enabled: true
-  per_page: 9
-  permalink: '/page:num/'
-  limit: 0
-  sort_field : ' date '
-  sort_reverse : true
+permalink: /:year-:month-:day-:title
+paginate: 9
+paginate_path: "/page/:num/
 exclude: ['Gemfile.lock', 'Gemfile', 'Rakefile','README.md']
 highlighter: rouge
 comments :
