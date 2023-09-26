@@ -10,7 +10,7 @@ github: https://github.com/NctZyc
 markdown: kramdown
 theme: minima
  #permalink: /:year/:month/:day/:title
-plugins: [jekyll-paginate-v2,jekyll-feed,jekyll-sitemap,jekyll-seo-tag]
+plugins: [jekyll-paginate,jekyll-feed,jekyll-sitemap,jekyll-seo-tag]
 pagination:
   enabled: true
   per_page: 9
