@@ -22,8 +22,26 @@
 						case "home":				
 							window.location.href="https://www.yygy.top";
 						break;
-						case "theme":				
-							alert("主题还没设计好，哪位有艺术细胞的小伙伴给些建议呀~");
+						case "theme":
+							let themeChecked = $.cookie("themeChecked"); 						
+							switch(themeChecked){
+								case "spring":
+									$.cookie("themeChecked","summer");
+									break;
+								case "summer":
+									$.cookie("themeChecked","fall");
+									break;
+								case "fall":
+									$.cookie("themeChecked","winter");
+									break;
+								case "winter":
+									$.cookie("themeChecked","spring");
+									break;
+								default:
+									$.cookie("themeChecked","fall");
+									break;
+							}
+							window.location.reload();
 						break;
 						case "rest":		
 							if($(".main-content").css("visibility") == "visible"){

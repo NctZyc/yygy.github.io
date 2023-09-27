@@ -147,36 +147,51 @@ LeafScene.prototype.render = function() {
 function Random(min, max) {
 	return Math.round(Math.random() * (max - min)) + min;
 }
+
+function changeBg(themeChecked){
+	var imgNum = Random(1,3);
+	var headObj = $("head");
+	var bg = $("#bg_div");
+	switch(themeChecked){
+			case "spring":
+				headObj.append("<style>.leaf-scene div {background: url(/style/themeImg/Lucky_Clover"+imgNum+".png) no-repeat;background-size:100%;}</style>"); 
+				bg.css("background-image","url(/style/themeImg/bg/bg-spring.jpg)");
+				break;
+			case "summer":
+				headObj.append("<style>.leaf-scene div {background: url(/style/themeImg/Summer"+imgNum+".png) no-repeat;background-size:100%;}</style>"); 
+				bg.css("background-image","url(/style/themeImg/bg/bg-summer.jpg)");
+				break;
+			case "fall":
+				headObj.append("<style>.leaf-scene div {background: url(/style/themeImg/Maple_Leaf"+imgNum+".png) no-repeat;background-size:100%;}</style>"); 
+				bg.css("background-image","url(/style/themeImg/bg/bg-fall.jpg)");
+				break;
+			case "winter":
+				headObj.append("<style>.leaf-scene div {background: url(/style/themeImg/SnowFlake"+imgNum+".png) no-repeat;background-size:100%;}</style>"); 
+				bg.css("background-image","url(/style/themeImg/bg/bg-winter.jpg)");
+				break;
+		}
+}
+
 // start up leaf scene
 	var leafContainer = document.querySelector('.falling-leaves'),
     leaves = new LeafScene(leafContainer);
 function ThemeInit(){
 	var currentDate = new Date();
 	var currentMonth = currentDate.getMonth()+1;
-	var headObj = $("head");
-	var imgNum = Random(1,3);
 	if(themeChecked != undefined){
-		switch(themeChecked){
-			case "spring":
-				headObj.append("<style>.leaf-scene div {background: url(/style/themeImg/Lucky_Clover"+imgNum+".png) no-repeat;background-size:100%;}</style>"); break;
-			case "summer":
-				headObj.append("<style>.leaf-scene div {background: url(/style/themeImg/Summer"+imgNum+".png) no-repeat;background-size:100%;}</style>"); break;
-			case "fall":
-				headObj.append("<style>.leaf-scene div {background: url(/style/themeImg/Maple_Leaf"+imgNum+".png) no-repeat;background-size:100%;}</style>"); break;
-			case "winter":
-				headObj.append("<style>.leaf-scene div {background: url(/style/themeImg/SnowFlake"+imgNum+".png) no-repeat;background-size:100%;}</style>"); break;
-		}
+		changeBg(themeChecked);
 	}else{
-		headObj.append("<style>.leaf-scene div {background: url(/style/themeImg/Maple_Leaf"+imgNum+".png) 100% no-repeat;background-size:100%;}</style>");	
-		/*if(currentMonth>=2&&currentMonth<=4){
-			headObj.append("<style>.leaf-scene div {background: url(/style/themeImg/Lucky_Clover"+imgNum+".png) no-repeat;background-size:100%;}</style>");
+		if(currentMonth>=2&&currentMonth<=4){
+			themeChecked = "spring";
 		}else if(currentMonth>=5&&currentMonth<=7){
-			headObj.append("<style>.leaf-scene div {background: url(/style/themeImg/Summer"+imgNum+".png) 100% no-repeat;background-size:100%;}</style>");	
+			themeChecked = "summer";
 		}else if(currentMonth>=8&&currentMonth<=10){
-			headObj.append("<style>.leaf-scene div {background: url(/style/themeImg/Maple_Leaf"+imgNum+".png) 100% no-repeat;background-size:100%;}</style>");	
+			themeChecked = "fall";
 		}else{
-			headObj.append("<style>.leaf-scene div {background: url(/style/themeImg/SnowFlake"+imgNum+".png) 100% no-repeat;background-size:100%;}</style>");	
-		}*/
+			themeChecked = "winter";
+		}
+		$.cookie("themeChecked",themeChecked);
+		changeBg(themeChecked);
 	}
 }
 ThemeInit();
