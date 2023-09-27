@@ -210,9 +210,21 @@ html {
   background-size:30px 30px;
 }
 
+.context-menu-icon-rest{
+	background: url("/style/contextMenuImage/rest.png") no-repeat center center;
+	background-position: 11% 50%;
+	background-size:35px 35px;
+}
+
+.context-menu-icon-rest-try{
+	background: url("/style/contextMenuImage/try.png") no-repeat center center;
+	background-position: 11% 50%;
+	background-size:35px 35px;
+}
+
 .context-menu-icon-issue {
   background: url("/style/contextMenuImage/issue_icon.png") no-repeat center center;
-  background-position: 13% 50%;
+  background-position: 11% 50%;
   background-size:30px 30px;
  }
 
